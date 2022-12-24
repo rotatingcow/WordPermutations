@@ -3,7 +3,7 @@ import java.util.ArrayList;
 class Main {
 
   static int combinationsInt = 0;
-  static String combinationsString = "";
+  static ArrayList<String> combinationsString = new ArrayList<String>();
 
   public static void main(String[] args) {
 
@@ -23,11 +23,12 @@ class Main {
   private void scrambleWord(String str, int l, int r){ 
 
     if (l == r){
+        
         if(!combinationsString.contains(str)){
             System.out.println(str);
             combinationsInt += 1;
-            combinationsString += str;
-        }
+            combinationsString.add(str);
+         }
         
     }else {
         for (int i = l; i <= r; i++) {
